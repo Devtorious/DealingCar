@@ -3,112 +3,112 @@ package DealingCar;
 import java.util.Date;
 
 public class User {
-    protected String customerID;
-    private String customerUserName;
-    private String customerPassword;
-    private String customerName;
-    private Date customerDoB;
-    private String customerEmail;
-    private int customerPhone;
-    private String customerAddress;
-    protected String customerStatus;
+    protected String userID;
+    private String username;
+    private String userPassword;
+    private String name;
+    private Date userDOB;
+    private String userEmail;
+    private int userPhone;
+    private String userAddress;
+    protected char customerStatus;
 
-    public User(String customerID, String customerUserName, String customerPassword, String customerName, Date customerDoB, String customerEmail, int customerPhone, String customerAddress, String customerStatus) {
-        this.customerID = customerID;
-        this.customerUserName = customerUserName;
-        this.customerPassword = customerPassword;
-        this.customerName = customerName;
-        this.customerDoB = customerDoB;
-        this.customerEmail = customerEmail;
-        this.customerPhone = customerPhone;
-        this.customerAddress = customerAddress;
+    public User(String userID, String username, String userPassword, String name, Date userDOB, String userEmail, int userPhone, String userAddress, char customerStatus) {
+        this.userID = userID;
+        this.username = username;
+        this.userPassword = userPassword;
+        this.name = name;
+        this.userDOB = userDOB;
+        this.userEmail = userEmail;
+        this.userPhone = userPhone;
+        this.userAddress = userAddress;
         this.customerStatus = customerStatus;
     }
 
-    public String getCustomerID() {
-        return customerID;
+    public String getUserID() {
+        return userID;
     }
 
-    public void setCustomerID(String customerID) {
-        this.customerID = customerID;
+    public void setUserID(String userID) {
+        this.userID = userID;
     }
 
-    public String getCustomerUserName() {
-        return customerUserName;
+    public String getUsername() {
+        return username;
     }
 
-    public void setCustomerUserName(String customerUserName) {
-        this.customerUserName = customerUserName;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
-    public String getCustomerPassword() {
-        return customerPassword;
+    public String getUserPassword() {
+        return userPassword;
     }
 
-    public void setCustomerPassword(String customerPassword) {
-        this.customerPassword = customerPassword;
+    public void setUserPassword(String userPassword) {
+        this.userPassword = userPassword;
     }
 
-    public String getCustomerName() {
-        return customerName;
+    public String getName() {
+        return name;
     }
 
-    public void setCustomerName(String customerName) {
-        this.customerName = customerName;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public Date getCustomerDoB() {
-        return customerDoB;
+    public Date getUserDOB() {
+        return userDOB;
     }
 
-    public void setCustomerDoB(Date customerDoB) {
-        this.customerDoB = customerDoB;
+    public void setUserDOB(Date userDOB) {
+        this.userDOB = userDOB;
     }
 
-    public String getCustomerEmail() {
-        return customerEmail;
+    public String getUserEmail() {
+        return userEmail;
     }
 
-    public void setCustomerEmail(String customerEmail) {
-        this.customerEmail = customerEmail;
+    public void setUserEmail(String userEmail) {
+        this.userEmail = userEmail;
     }
 
-    public int getCustomerPhone() {
-        return customerPhone;
+    public int getUserPhone() {
+        return userPhone;
     }
 
-    public void setCustomerPhone(int customerPhone) {
-        this.customerPhone = customerPhone;
+    public void setUserPhone(int userPhone) {
+        this.userPhone = userPhone;
     }
 
-    public String getCustomerAddress() {
-        return customerAddress;
+    public String getUserAddress() {
+        return userAddress;
     }
 
-    public void setCustomerAddress(String customerAddress) {
-        this.customerAddress = customerAddress;
+    public void setUserAddress(String userAddress) {
+        this.userAddress = userAddress;
     }
 
-    public String getCustomerStatus() {
+    public char getCustomerStatus() {
         return customerStatus;
     }
 
-    public void setCustomerStatus(String customerStatus) {
+    public void setCustomerStatus(char customerStatus) {
         this.customerStatus = customerStatus;
     }
 
     @Override
     public String toString() {
         return "User{" +
-                "customerID='" + customerID + '\'' +
-                ", customerUserName='" + customerUserName + '\'' +
-                ", customerPassword='" + customerPassword + '\'' +
-                ", customerName='" + customerName + '\'' +
-                ", customerDoB=" + customerDoB +
-                ", customerEmail='" + customerEmail + '\'' +
-                ", customerPhone=" + customerPhone +
-                ", customerAddress='" + customerAddress + '\'' +
-                ", customerStatus='" + customerStatus + '\'' +
+                "userID='" + userID + '\'' +
+                ", username='" + username + '\'' +
+                ", userPassword='" + userPassword + '\'' +
+                ", name='" + name + '\'' +
+                ", userDOB=" + userDOB +
+                ", userEmail='" + userEmail + '\'' +
+                ", userPhone=" + userPhone +
+                ", userAddress='" + userAddress + '\'' +
+                ", customerStatus=" + customerStatus +
                 '}';
     }
 }
