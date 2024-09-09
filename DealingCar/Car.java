@@ -29,7 +29,7 @@ public class Car {
         this.notes = notes;
     }
 
-    protected String getCarId() {
+    public String getCarId() {
         return carId;
     }
 
