@@ -64,7 +64,16 @@ public class part {
     public void setNote(String note) {
         this.note = note;
     }
+    public void showpartDetails() {
+        System.out.println("part Id: " + partId);
+        System.out.println("manufacturer: " + manufacturer);  // Updated display for brand
+        System.out.println("part number: " + partnumber);
+        System.out.println("condition: " + condition);
+        System.out.println("warrenty: " + warrenty);
+        System.out.println("cost: " + cost);
 
+        System.out.println("note: " + note);
+    }
     @Override
     public String toString() {
         return "part{" +
