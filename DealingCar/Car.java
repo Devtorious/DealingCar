@@ -1,4 +1,4 @@
-package DealingCar;
+package DealingCar.DealingCar;
 
 import java.security.Provider;
 import java.util.List;
@@ -16,7 +16,8 @@ public class Car {
 
     private List<Provider.Service> serviceHistory;  // List to track service history
 
-    public Car(String carId, String brand, String model, int year, long mileage, String color, boolean status, double price, String notes, List<Provider.Service> serviceHistory) {
+
+    public Car(String carId, String brand, String model, int year, long mileage, String color, boolean status, double price, String notes) {
         this.carId = carId;
         this.brand = brand;
         this.model = model;
@@ -26,7 +27,6 @@ public class Car {
         this.status = status;
         this.price = price;
         this.notes = notes;
-        this.serviceHistory = serviceHistory;
     }
 
     protected String getCarId() {
@@ -109,5 +109,24 @@ public class Car {
         this.serviceHistory = serviceHistory;
     }
 
+    //Function
+    // Add a service record to the service history
+    public void addService(Provider.Service service) {
+        this.serviceHistory.add(service);
+    }
 
+    // Display car details
+    public void showCarDetails() {
+        System.out.println("Car ID: " + carId);
+        System.out.println("Brand: " + brand);  // Updated display for brand
+        System.out.println("Model: " + model);
+        System.out.println("Year: " + year);
+        System.out.println("Mileage: " + mileage);
+        System.out.println("Color: " + color);
+        System.out.println("Status: " + (status ? "Available" : "Sold"));
+        System.out.println("Price: " + price);
+        System.out.println("Notes: " + notes);
+    }
 }
+
+
