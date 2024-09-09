@@ -1,4 +1,4 @@
-package DealingCar;
+package DealingCar.DealingCar;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,7 +16,7 @@ public class CarInventory {
         System.out.println("Car added successfully: " + car.getCarId());
     }
 
-    // Optional: Display all cars in inventory
+    // Method to display all cars in inventory
     public void displayCars() {
         for (DealingCar.DealingCar.Car car : cars) {
             car.showCarDetails();

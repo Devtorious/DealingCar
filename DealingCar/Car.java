@@ -4,12 +4,12 @@ import java.security.Provider;
 import java.util.List;
 
 public class Car {
-    private String carId;      // Unique ID for the car
-    private String brand;       // DealingCar.Car manufacturer
+    private String carId;      // Unique ID of each car
+    private String brand;       // Car brand
     private String model;      // Model of the car
     private int year;          // Year of manufacture
     private long mileage;      // Mileage in kilometers
-    private String color;      // DealingCar.Car color
+    private String color;      // Car color
     private boolean status;    // true for available, false for sold
     private double price;      // Price of the car
     private String notes;      // Additional information (e.g., service history)
@@ -118,7 +118,7 @@ public class Car {
     // Display car details
     public void showCarDetails() {
         System.out.println("Car ID: " + carId);
-        System.out.println("Brand: " + brand);  // Updated display for brand
+        System.out.println("Brand: " + brand);
         System.out.println("Model: " + model);
         System.out.println("Year: " + year);
         System.out.println("Mileage: " + mileage);
