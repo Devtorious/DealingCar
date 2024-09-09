@@ -1,4 +1,4 @@
-package DealingCar;
+package DealingCar.DealingCar;
 
 import java.util.Date;
 
