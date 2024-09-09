@@ -1,4 +1,4 @@
-package DealingCar.DealingCar;
+package DealingCar;
 
 public class Main {
     public static void main(String[] args) {
