@@ -1,3 +1,5 @@
+package DealingCar;
+
 public class part {
     private String partId;      // Unique ID for the part
     private String manufacturer;       // DealingCar.Car manufacturer
