@@ -5,7 +5,7 @@ public class part {
     private String manufacturer;       // DealingCar.Car manufacturer
     private int partnumber;
     private char condition;
-    private int warrenty;
+    private int warranty;
     private int cost;
     private String note;
 
@@ -41,12 +41,12 @@ public class part {
         this.condition = condition;
     }
 
-    public int getWarrenty() {
-        return warrenty;
+    public int getWarranty() {
+        return warranty;
     }
 
-    public void setWarrenty(int warrenty) {
-        this.warrenty = warrenty;
+    public void setWarranty(int warranty) {
+        this.warranty = warranty;
     }
 
     public int getCost() {
@@ -69,7 +69,7 @@ public class part {
         System.out.println("manufacturer: " + manufacturer);  // Updated display for brand
         System.out.println("part number: " + partnumber);
         System.out.println("condition: " + condition);
-        System.out.println("warrenty: " + warrenty);
+        System.out.println("warranty: " + warranty);
         System.out.println("cost: " + cost);
 
         System.out.println("note: " + note);
@@ -79,9 +79,9 @@ public class part {
         return "part{" +
                 "partId='" + partId + '\'' +
                 ", manufacturer='" + manufacturer + '\'' +
-                ", partnumber=" + partnumber +
+                ", part number=" + partnumber +
                 ", condition=" + condition +
-                ", warrenty=" + warrenty +
+                ", warranty=" + warranty +
                 ", cost=" + cost +
                 ", note='" + note + '\'' +
                 '}';
