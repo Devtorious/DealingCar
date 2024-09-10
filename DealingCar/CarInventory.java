@@ -1,9 +1,9 @@
 package DealingCar.DealingCar;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
+import java.util.stream.Collectors;
+
+import static DealingCar.DealingCar.Main.getInventory;
 
 public class CarInventory {
     private List<Car> cars;
@@ -45,4 +45,80 @@ public class CarInventory {
             System.out.println("--------------------------------------");
         }
     }
+
+    // Search cases
+    public List<Car> searchByBrand(String brand) {
+        return cars.stream()
+                .filter(car -> car.getBrand().equalsIgnoreCase(brand))
+                .collect(Collectors.toList());
+    }
+
+    public List<Car> searchByModel(String model) {
+        return cars.stream()
+                .filter(car -> car.getModel().equalsIgnoreCase(model))
+                .collect(Collectors.toList());
+    }
+
+    public List<Car> searchById(String carId) {
+        return cars.stream()
+                .filter(car -> car.getCarId().equalsIgnoreCase(carId))
+                .collect(Collectors.toList());
+    }
+
+    public List<Car> searchByColor(String color) {
+        return cars.stream()
+                .filter(car -> car.getColor().equalsIgnoreCase(color))
+                .collect(Collectors.toList());
+    }
+
+    // Search method
+    public static void searchCar(String searchBy) {
+        Scanner scanner = new Scanner(System.in);
+
+        switch (searchBy) {
+            case "brand":
+                System.out.println("Search by Brand: ");
+                String brand = scanner.nextLine().trim();
+                List<Car> brandCars = getInventory().searchByBrand(brand);
+                displaySearchResults(brandCars);
+                break;
+
+            case "model":
+                System.out.println("Search by Model: ");
+                String model = scanner.nextLine().trim();
+                List<Car> modelCars = getInventory().searchByModel(model);
+                displaySearchResults(modelCars);
+                break;
+
+            case "color":
+                System.out.println("Search by Color: ");
+                String color = scanner.nextLine().trim();
+                List<Car> colorCars = getInventory().searchByColor(color);
+                displaySearchResults(colorCars);
+                break;
+
+            case "id":
+                System.out.println("Search by ID: ");
+                String id = scanner.nextLine().trim();
+                List<Car> idCars = getInventory().searchById(id);
+                displaySearchResults(idCars);
+                break;
+
+            default:
+                System.out.println("Invalid search criterion. Please use (brand, model, color, ID).");
+                break;
+        }
+    }
+
+private static void displaySearchResults(List<Car> cars) {
+    if (cars.isEmpty()) {
+        System.out.println("No cars found matching the criteria.");
+    } else {
+        for (Car car : cars) {
+            car.showCarDetails();
+            System.out.println("--------------------------------------");
+        }
+    }
+}
+
 }
