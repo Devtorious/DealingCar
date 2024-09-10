@@ -3,7 +3,7 @@ package DealingCar;
 public class client {
     public int spending;
     public String membership;
-    public int discountrate;
+    public int discountRate;
 
     public int getSpending() {
         return spending;
@@ -21,20 +21,22 @@ public class client {
         this.membership = membership;
     }
 
-    public int getDiscountrate() {
-        return discountrate;
+    public int getDiscountRate() {
+        return discountRate;
     }
 
-    public void setDiscountrate(int discountrate) {
-        this.discountrate = discountrate;
+    public void setDiscountRate(int discountRate) {
+        this.discountRate = discountRate;
     }
-
+private class caldiscountRate{
+        
+}
     @Override
     public String toString() {
         return "client{" +
                 "spending=" + spending +
                 ", membership='" + membership + '\'' +
-                ", discountrate=" + discountrate +
+                ", discount rate=" + discountRate +
                 '}';
     }
 }
