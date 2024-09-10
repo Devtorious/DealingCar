@@ -1,4 +1,4 @@
-package DealingCar;
+package DealingCar.DealingCar;
 public class Main {
     public static void main(String[] args) {
         // Create the car inventory
@@ -13,6 +13,10 @@ public class Main {
         inventory.addCar(car2);
 
         // Display all cars in the inventory
+        System.out.println("--------------------------------------");
+        System.out.println("Cars list:");
         inventory.displayCars();
+
+
     }
 }

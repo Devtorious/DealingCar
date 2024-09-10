@@ -1,26 +1,39 @@
 package DealingCar.DealingCar;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public class CarInventory {
-    private List<DealingCar.DealingCar.Car> cars;
+    private List<Car> cars;
+    private Set<String> carIds;
 
     public CarInventory() {
         cars = new ArrayList<>();
+        carIds = new HashSet<>();     // Initialize the set to store car IDs
     }
 
-    // Method to add a car to the inventory
-    public void addCar(DealingCar.DealingCar.Car car) {
+    // Add a car to the inventory
+    public boolean addCar(Car car) {
+        // Check if the carId is existed already
+        if (carIds.contains(car.getCarId())) {
+            System.out.println("Error: Car with ID " + car.getCarId() + " already exists!");
+            return false;
+        }
+
+        // Add the car to the inventory and the carId to the set
         cars.add(car);
+        carIds.add(car.getCarId());
         System.out.println("Car added successfully: " + car.getCarId());
+        return true;
     }
 
-    // Method to display all cars in inventory
+    // display all cars
     public void displayCars() {
-        for (DealingCar.DealingCar.Car car : cars) {
+        for (Car car : cars) {
             car.showCarDetails();
-            System.out.println("----------------------");
+            System.out.println("--------------------------------------");
         }
     }
 }
