@@ -2,7 +2,7 @@ package DealingCar.DealingCar;
 
 import java.util.Date;
 
-public class User {
+public abstract class User {
     protected String userID;
     private String username;
     private String userPassword;
