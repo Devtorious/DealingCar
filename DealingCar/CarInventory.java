@@ -8,25 +8,34 @@ import java.util.Set;
 public class CarInventory {
     private List<Car> cars;
     private Set<String> carIds;
+    private String carIdFormat = "^C\\d+$";
 
     public CarInventory() {
         cars = new ArrayList<>();
         carIds = new HashSet<>();     // Initialize the set to store car IDs
+
     }
 
     // Add a car to the inventory
     public boolean addCar(Car car) {
         // Check if the carId is existed already
-        if (carIds.contains(car.getCarId())) {
-            System.out.println("Error: Car with ID " + car.getCarId() + " already exists!");
+        if (car.getCarId().matches(carIdFormat)) {
+            if (carIds.contains(car.getCarId())) {
+                System.out.println("Error: Car with ID " + car.getCarId() + " already exists!!!!!");
+                return false;
+            }
+            else {
+                // Add the car to the inventory and the carId to the set
+                cars.add(car);
+                carIds.add(car.getCarId());
+                System.out.println("Car added successfully: " + car.getCarId());
+                return true;
+            }
+        }
+        else {
+            System.out.println("Invalid Car ID Format (" + car.getCarId() + ")");
             return false;
         }
-
-        // Add the car to the inventory and the carId to the set
-        cars.add(car);
-        carIds.add(car.getCarId());
-        System.out.println("Car added successfully: " + car.getCarId());
-        return true;
     }
 
     // display all cars

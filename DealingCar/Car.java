@@ -1,18 +1,19 @@
 package DealingCar.DealingCar;
 
 import java.security.Provider;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Car {
-    private String carId;      // Unique ID of each car
-    private String brand;       // Car brand
-    private String model;      // Model of the car
-    private int year;          // Year of manufacture
-    private long mileage;      // Mileage in kilometers
-    private String color;      // Car color
+    private String carId;
+    private String brand;
+    private String model;
+    private int year;
+    private long mileage;
+    private String color;
     private boolean status;    // true for available, false for sold
-    private double price;      // Price of the car
-    private String notes;      // Additional information (e.g., service history)
+    private double price;
+    private String notes;
 
     private List<Provider.Service> serviceHistory;  // List to track service history
 
@@ -27,6 +28,7 @@ public class Car {
         this.status = status;
         this.price = price;
         this.notes = notes;
+        this.serviceHistory = new ArrayList<>();
     }
 
     public String getCarId() {
@@ -112,6 +114,9 @@ public class Car {
     //Function
     // Add a service record to the service history
     public void addService(Provider.Service service) {
+        if (this.serviceHistory == null) {
+            this.serviceHistory = new ArrayList<>();
+        }
         this.serviceHistory.add(service);
     }
 
