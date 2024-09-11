@@ -11,8 +11,6 @@ public class Main {
         return inventory;
     }
 
-
-
     // Add new car input
     public static void addNewCar(Scanner scanner) {
         System.out.print("Enter Car ID: ");
@@ -50,7 +48,6 @@ public class Main {
         System.out.println("--------------------------------------");
         newCar.showCarDetails();
         inventory.addCar(newCar);
-
     }
 
     public static void main(String[] args) {
@@ -142,7 +139,6 @@ public class Main {
                     System.out.println("Invalid option. Please choose again.");
             }
         }
-
         scanner.close();
     }
 }
