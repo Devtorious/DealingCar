@@ -1,7 +1,7 @@
 package DealingCar;
 
 import java.util.Date;
-public class Employee extends User {
+public class Employee extends DealingCar.DealingCar.User {
     private int salary;
     private int revenue;
 
