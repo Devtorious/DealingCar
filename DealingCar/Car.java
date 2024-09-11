@@ -31,6 +31,8 @@ public class Car {
         this.serviceHistory = new ArrayList<>();
     }
 
+
+
     public String getCarId() {
         return carId;
     }
@@ -39,11 +41,11 @@ public class Car {
         this.carId = carId;
     }
 
-    protected String getbrand() {
+    protected String getBrand() {
         return brand;
     }
 
-    protected void setbrand(String brand) {
+    protected void setBrand(String brand) {
         this.brand = brand;
     }
 
@@ -132,6 +134,8 @@ public class Car {
         System.out.println("Price: " + price);
         System.out.println("Notes: " + notes);
     }
+
+
 }
 
 
