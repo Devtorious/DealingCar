@@ -48,10 +48,7 @@ public class Main {
         // Create new car object
         Car newCar = new Car(carId, brand, model, year, mileage, color, status, price, notes);
         System.out.println("--------------------------------------");
-
         newCar.showCarDetails();
-
-        // Add new car to inventory
         inventory.addCar(newCar);
 
     }

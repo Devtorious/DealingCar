@@ -33,15 +33,13 @@ public class CarInventory {
                 carIds.add(car.getCarId());
                 System.out.println("Car added successfully: " + car.getCarId());
                 System.out.println("--------------------------------------");
-
                 return true;
             }
         }
         else {
-            System.out.println("--------------------------------------");
             System.out.println("Invalid Car ID Format (" + car.getCarId() + ")");
+            System.out.println("Car added failed");
             System.out.println("--------------------------------------");
-
             return false;
         }
     }
