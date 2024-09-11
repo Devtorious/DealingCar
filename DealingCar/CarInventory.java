@@ -12,7 +12,7 @@ public class CarInventory {
 
     public CarInventory() {
         cars = new ArrayList<>();
-        carIds = new HashSet<>();     // Initialize the set to store car IDs
+        carIds = new HashSet<>();
 
     }
 
@@ -33,7 +33,10 @@ public class CarInventory {
             }
         }
         else {
+            System.out.println("--------------------------------------");
             System.out.println("Invalid Car ID Format (" + car.getCarId() + ")");
+            System.out.println("--------------------------------------");
+
             return false;
         }
     }
