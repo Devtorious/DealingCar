@@ -11,8 +11,52 @@ public class Main {
         return inventory;
     }
 
-    public static void main(String[] args) {
 
+
+    // Add new car input
+    public static void addNewCar(Scanner scanner) {
+        System.out.print("Enter Car ID: ");
+        String carId = scanner.nextLine().trim();
+
+        System.out.print("Enter Car Brand: ");
+        String brand = scanner.nextLine().trim();
+
+        System.out.print("Enter Car Model: ");
+        String model = scanner.nextLine().trim();
+
+        System.out.print("Enter Car Year: ");
+        int year = scanner.nextInt();
+
+        System.out.print("Enter Car Mileage: ");
+        long mileage = scanner.nextLong();
+        scanner.nextLine();
+
+        System.out.print("Enter Car Color: ");
+        String color = scanner.nextLine().trim();
+
+        System.out.print("Is the car available (true/false): ");
+        boolean status = scanner.nextBoolean();
+
+        System.out.print("Enter Car Price (USD): ");
+        double price = scanner.nextDouble();
+        scanner.nextLine();
+
+        System.out.print("Enter Car Notes: ");
+        String notes = scanner.nextLine().trim();
+
+
+        // Create new car object
+        Car newCar = new Car(carId, brand, model, year, mileage, color, status, price, notes);
+        System.out.println("--------------------------------------");
+
+        newCar.showCarDetails();
+
+        // Add new car to inventory
+        inventory.addCar(newCar);
+
+    }
+
+    public static void main(String[] args) {
 
         // Create a new car instance
         DealingCar.DealingCar.Car car1 = new DealingCar.DealingCar.Car("C001", "Toyota", "Corolla", 2022, 10000, "Blue", true, 20000, "No issues");
@@ -56,6 +100,7 @@ public class Main {
         inventory.addCar(car23);inventory.addCar(car24);inventory.addCar(car25);inventory.addCar(car26);
         inventory.addCar(car27);inventory.addCar(car28);inventory.addCar(car29);inventory.addCar(car30);
 
+        // Main UI
         Scanner scanner = new Scanner(System.in);
         boolean exit = false;
 
@@ -67,7 +112,7 @@ public class Main {
             System.out.print("Choose an option: ");
 
             int choice = scanner.nextInt();
-            scanner.nextLine();  // Consume newline character
+            scanner.nextLine();
 
             switch (choice) {
                 case 1:
@@ -102,44 +147,5 @@ public class Main {
         }
 
         scanner.close();
-    }
-
-    // Add new car input
-    public static void addNewCar(Scanner scanner) {
-        System.out.print("Enter Car ID: ");
-        String carId = scanner.nextLine().trim();
-
-        System.out.print("Enter Car Brand: ");
-        String brand = scanner.nextLine().trim();
-
-        System.out.print("Enter Car Model: ");
-        String model = scanner.nextLine().trim();
-
-        System.out.print("Enter Car Year: ");
-        int year = scanner.nextInt();
-
-        System.out.print("Enter Car Mileage: ");
-        long mileage = scanner.nextLong();
-        scanner.nextLine();  // Consume newline character
-
-        System.out.print("Enter Car Color: ");
-        String color = scanner.nextLine().trim();
-
-        System.out.print("Is the car available (true/false): ");
-        boolean status = scanner.nextBoolean();
-
-        System.out.print("Enter Car Price: ");
-        double price = scanner.nextDouble();
-        scanner.nextLine();  // Consume newline character
-
-        System.out.print("Enter Car Notes: ");
-        String notes = scanner.nextLine().trim();
-
-        // Create new car object
-        Car newCar = new Car(carId, brand, model, year, mileage, color, status, price, notes);
-
-        // Add new car to inventory
-        inventory.addCar(newCar);
-
     }
 }
