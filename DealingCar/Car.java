@@ -175,6 +175,7 @@ public class Car {
 
             System.out.print("Enter Car Notes: ");
             notes = scanner.nextLine().trim();
+            System.out.println("--------------------------------------");
 
             // Create new car object
             Car newCar = new Car(carId, brand, model, year, mileage, color, status, price, notes);

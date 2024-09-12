@@ -16,6 +16,7 @@ public class CarInventory {
         initializerCars();
     }
 
+    //initial cars
     private void   initializerCars() {
         // Create a new car instance
         addCar(new Car("C001", "Toyota", "Corolla", 2022, 10000, "Blue", true, 20000, "No issues"));
@@ -82,7 +83,6 @@ public class CarInventory {
     public void displayCars() {
         for (Car car : cars) {
             car.showCarDetails();
-            System.out.println("--------------------------------------");
         }
     }
 
@@ -150,6 +150,7 @@ public class CarInventory {
         }
     }
 
+    //search result
 private static void displaySearchResults(List<Car> cars) {
     if (cars.isEmpty()) {
         System.out.println("No cars found matching the criteria.");
