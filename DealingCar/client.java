@@ -1,7 +1,5 @@
 package DealingCar;
 
-import static DealingCar.SaleTransaction.*;
-
 public class client {
     public int spending;
     public String membership;
@@ -30,11 +28,8 @@ public class client {
     public void setDiscountRate(int discountRate) {
         this.discountRate = discountRate;
     }
-private int caldiscountRate(String id){
-        if (id == clientId){
-            spending+=SaleTransaction.totalAmount;
-        }
-        return spending;
+private class caldiscountRate{
+        
 }
     @Override
     public String toString() {
