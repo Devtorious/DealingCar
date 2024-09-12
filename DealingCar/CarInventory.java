@@ -13,7 +13,41 @@ public class CarInventory {
     public CarInventory() {
         cars = new ArrayList<>();
         carIds = new HashSet<>();
+        initializerCars();
+    }
 
+    private void   initializerCars() {
+        // Create a new car instance
+        addCar(new Car("C001", "Toyota", "Corolla", 2022, 10000, "Blue", true, 20000, "No issues"));
+        addCar(new Car("C002", "Honda", "Civic", 2021, 5000, "Red", true, 22000, "Recently booked"));
+        addCar(new Car("C003", "Nissan", "GTR Nismo", 2024, 0, "Black", true, 39999, "Brand new"));
+        addCar(new Car("C004", "Ford", "Mustang", 2022, 5000, "Yellow", true, 35000, "No issues"));
+        addCar(new Car("C005", "Chevrolet", "Camaro", 2021, 15000, "Green", true, 30000, "Minor scratches"));
+        addCar(new Car("C006", "BMW", "X5", 2023, 3000, "White", true, 60000, "Excellent condition"));
+        addCar(new Car("C007", "Mercedes-Benz", "C-Class", 2020, 20000, "Black", true, 40000, "Well maintained"));
+        addCar(new Car("C008", "Audi", "A4", 2022, 7000, "Silver", true, 45000, "No issues"));
+        addCar(new Car("C009", "Toyota", "Camry", 2021, 10000, "Blue", true, 35000, "Good condition"));
+        addCar(new Car("C010", "Honda", "Accord", 2022, 2000, "Red", true, 28000, "Like new"));
+        addCar(new Car("C011", "Hyundai", "Elantra", 2023, 5000, "Gray", true, 27000, "No issues"));
+        addCar(new Car("C012", "Nissan", "Altima", 2021, 12000, "White", true, 32000, "Well maintained"));
+        addCar(new Car("C013", "Kia", "Optima", 2022, 8000, "Blue", true, 29000, "Good condition"));
+        addCar(new Car("C014", "Volkswagen", "Passat", 2020, 25000, "Silver", true, 26000, "Minor wear and tear"));
+        addCar(new Car("C015", "Subaru", "Legacy", 2021, 18000, "Green", true, 31000, "Well maintained"));
+        addCar(new Car("C016", "Mazda", "6", 2023, 4000, "Red", true, 32000, "Like new"));
+        addCar(new Car("C017", "Land Rover", "Range Rover", 2022, 6000, "Black", true, 75000, "Excellent condition"));
+        addCar(new Car("C018", "Porsche", "911", 2023, 3000, "Yellow", true, 95000, "No issues"));
+        addCar(new Car("C019", "Jaguar", "F-Type", 2022, 4000, "Orange", true, 85000, "Excellent condition"));
+        addCar(new Car("C020", "Lexus", "ES", 2021, 15000, "Blue", true, 40000, "Good condition"));
+        addCar(new Car("C021", "Acura", "TLX", 2022, 10000, "White", true, 42000, "Well maintained"));
+        addCar(new Car("C022", "Buick", "Enclave", 2021, 12000, "Gray", true, 45000, "Good condition"));
+        addCar(new Car("C023", "Chrysler", "300", 2020, 20000, "Silver", true, 35000, "Minor wear and tear"));
+        addCar(new Car("C024", "GMC", "Yukon", 2022, 8000, "Black", true, 55000, "Excellent condition"));
+        addCar(new Car("C025", "Ford", "Explorer", 2021, 15000, "Red", true, 38000, "Well maintained"));
+        addCar(new Car("C026", "Chevrolet", "Tahoe", 2022, 6000, "Blue", true, 60000, "No issues"));
+        addCar(new Car("C027", "Toyota", "Highlander", 2023, 2000, "White", true, 35000, "Like new"));
+        addCar(new Car("C028", "Honda", "Pilot", 2021, 18000, "Gray", true, 37000, "Good condition"));
+        addCar(new Car("C029", "Nissan", "Rogue", 2022, 7000, "Silver", true, 34000, "Well maintained"));
+        addCar(new Car("C030", "Hyundai", "Santa Fe", 2021, 13000, "Green", true, 29000, "Minor wear and tear"));
     }
 
     // Add a car to the inventory
