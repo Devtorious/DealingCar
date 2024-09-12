@@ -133,7 +133,11 @@ public class Car {
         System.out.println("Status: " + (status ? "Available" : "Sold"));
         System.out.println("Price: " + price);
         System.out.println("Notes: " + notes);
+        System.out.println("--------------------------------------");
+
     }
+
+
 
 
 }

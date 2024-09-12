@@ -11,13 +11,51 @@ public class Main {
         return inventory;
     }
 
+    // Add new car input
+    public static void addNewCar(Scanner scanner) {
+        System.out.print("Enter Car ID: ");
+        String carId = scanner.nextLine().trim();
+
+        System.out.print("Enter Car Brand: ");
+        String brand = scanner.nextLine().trim();
+
+        System.out.print("Enter Car Model: ");
+        String model = scanner.nextLine().trim();
+
+        System.out.print("Enter Car Year: ");
+        int year = scanner.nextInt();
+
+        System.out.print("Enter Car Mileage: ");
+        long mileage = scanner.nextLong();
+        scanner.nextLine();
+
+        System.out.print("Enter Car Color: ");
+        String color = scanner.nextLine().trim();
+
+        System.out.print("Is the car available (true/false): ");
+        boolean status = scanner.nextBoolean();
+
+        System.out.print("Enter Car Price (USD): ");
+        double price = scanner.nextDouble();
+        scanner.nextLine();
+
+        System.out.print("Enter Car Notes: ");
+        String notes = scanner.nextLine().trim();
+
+
+        // Create new car object
+        Car newCar = new Car(carId, brand, model, year, mileage, color, status, price, notes);
+        System.out.println("--------------------------------------");
+        newCar.showCarDetails();
+        inventory.addCar(newCar);
+    }
+
     public static void main(String[] args) {
 
-
         // Create a new car instance
-        DealingCar.DealingCar.Car car1 = new DealingCar.DealingCar.Car("2001", "Toyota", "Corolla", 2022, 10000, "Blue", true, 20000, "No issues");
+        DealingCar.DealingCar.Car car1 = new DealingCar.DealingCar.Car("C001", "Toyota", "Corolla", 2022, 10000, "Blue", true, 20000, "No issues");
         DealingCar.DealingCar.Car car3 = new DealingCar.DealingCar.Car("C002", "Honda", "Civic", 2021, 5000, "Red", true, 22000, "Recently booked");
-        DealingCar.DealingCar.Car car2 = new DealingCar.DealingCar.Car("C002", "Nissan", "GTR Nismo", 2024, 0, "Black", true, 39999, "Brand new");
+        DealingCar.DealingCar.Car car2 = new DealingCar.DealingCar.Car("C003", "Nissan", "GTR Nismo", 2024, 0, "Black", true, 39999, "Brand new");
         DealingCar.DealingCar.Car car4 = new DealingCar.DealingCar.Car("C004", "Ford", "Mustang", 2022, 5000, "Yellow", true, 35000, "No issues");
         DealingCar.DealingCar.Car car5 = new DealingCar.DealingCar.Car("C005", "Chevrolet", "Camaro", 2021, 15000, "Green", true, 30000, "Minor scratches");
         DealingCar.DealingCar.Car car6 = new DealingCar.DealingCar.Car("C006", "BMW", "X5", 2023, 3000, "White", true, 60000, "Excellent condition");
@@ -48,47 +86,59 @@ public class Main {
 
 
         // Add the cars to the CarInventory
-        inventory.addCar(car1);
-        inventory.addCar(car2);
-        inventory.addCar(car3);
-        inventory.addCar(car4);
-        inventory.addCar(car5);
-        inventory.addCar(car6);
-        inventory.addCar(car7);
-        inventory.addCar(car8);
-        inventory.addCar(car9);
-        inventory.addCar(car10);
-        inventory.addCar(car11);
-        inventory.addCar(car12);
-        inventory.addCar(car13);
-        inventory.addCar(car14);
-        inventory.addCar(car15);
-        inventory.addCar(car16);
-        inventory.addCar(car17);
-        inventory.addCar(car18);
-        inventory.addCar(car19);
-        inventory.addCar(car20);
-        inventory.addCar(car21);
-        inventory.addCar(car22);
-        inventory.addCar(car23);
-        inventory.addCar(car24);
-        inventory.addCar(car25);
-        inventory.addCar(car26);
-        inventory.addCar(car27);
-        inventory.addCar(car28);
-        inventory.addCar(car29);
-        inventory.addCar(car30);
+        inventory.addCar(car1);inventory.addCar(car2);inventory.addCar(car3);inventory.addCar(car4);inventory.addCar(car5);inventory.addCar(car6);
+        inventory.addCar(car7);inventory.addCar(car8);inventory.addCar(car9);inventory.addCar(car10);
+        inventory.addCar(car11);inventory.addCar(car12);inventory.addCar(car13);inventory.addCar(car14);
+        inventory.addCar(car15);inventory.addCar(car16);inventory.addCar(car17);inventory.addCar(car18);
+        inventory.addCar(car19);inventory.addCar(car20);inventory.addCar(car21);inventory.addCar(car22);
+        inventory.addCar(car23);inventory.addCar(car24);inventory.addCar(car25);inventory.addCar(car26);
+        inventory.addCar(car27);inventory.addCar(car28);inventory.addCar(car29);inventory.addCar(car30);
 
-        // Display all cars in the inventory
-        System.out.println("--------------------------------------");
-        System.out.println("Cars list:");
-        inventory.displayCars();
-
-        // Search car
+        // Main UI
         Scanner scanner = new Scanner(System.in);
-        System.out.println();
-        System.out.println("Search by (brand, model, color, ID): ");
-        String searchBy = scanner.nextLine().trim().toLowerCase();
-        CarInventory.searchCar(searchBy);
+        boolean exit = false;
+
+        while (!exit) {
+            System.out.println("1. Display all cars");
+            System.out.println("2. Search for a car");
+            System.out.println("3. Add a new car");
+            System.out.println("4. Exit");
+            System.out.print("Choose an option: ");
+
+            int choice = scanner.nextInt();
+            scanner.nextLine();
+
+            switch (choice) {
+                case 1:
+                    // display all cars
+                    System.out.println("--------------------------------------");
+                    System.out.println("Cars list:");
+                    inventory.displayCars();
+                    break;
+
+                case 2:
+                    // search car
+                    System.out.println();
+                    System.out.println("Search by (brand, model, color, ID): ");
+                    String searchBy = scanner.nextLine().trim().toLowerCase();
+                    CarInventory.searchCar(searchBy);
+                    break;
+
+                case 3:
+                    // add new car input
+                    addNewCar(scanner);
+                    break;
+
+                case 4:
+                    //
+                    exit = true;
+                    System.out.println("Exiting...");
+                    break;
+
+                default:
+                    System.out.println("Invalid option. Please choose again.");
+            }
+        }
+        scanner.close();
     }
 }
