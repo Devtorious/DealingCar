@@ -1,4 +1,4 @@
-package DealingCar.DealingCar;
+package DealingCar;
 
 import java.security.Provider;
 import java.util.ArrayList;
@@ -180,7 +180,7 @@ public class Car {
             // Create new car object
             Car newCar = new Car(carId, brand, model, year, mileage, color, status, price, notes);
             System.out.println("--------------------------------------");
-            if (Main.getInventory().addCar(newCar)) {
+            if (DealingCar.Main.getInventory().addCar(newCar)) {
                 newCar.showCarDetails();
             }
         } catch (NumberFormatException e) {

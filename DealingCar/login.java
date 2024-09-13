@@ -1,18 +1,18 @@
+package DealingCar;
+
 import java.io.File;  // Import the File class
-import java.io.FileNotFoundException;  // Import this class to handle errors
 import java.io.IOException;
 import java.util.Scanner; // Import the Scanner class to read text files
 
-public class ReadFile {
+public class login {
 
     public static void main(String[] args) {
         try {
-            File myObj = new File("src/filename.txt");
-            if (myObj.createNewFile()) {
-                System.out.println("File created: " + myObj.getName());
+            File loginpassword = new File("password.txt");
+            File loginusername = new File("usernamne.txt");
+            if (loginpassword.createNewFile()&&loginusername.createNewFile()) {
+                System.out.println("File created: " + loginpassword.getName());
 
-            }else {
-                System.out.print("file exist");
             }
         } catch (IOException e) {
             System.out.println("An error occurred.");
@@ -20,9 +20,9 @@ public class ReadFile {
         }
         Scanner myObj = new Scanner(System.in);  // Create a Scanner object
 
-          // Read user input
 
-        Scanner myReader = new Scanner("src/filename.txt");
+
+        Scanner myReader = new Scanner("filename.txt");
         int n=0;
         while (n==0){
             n= myObj.nextInt();
@@ -44,4 +44,8 @@ public class ReadFile {
             }
         }
         }
+
+    public static void vertifylogin(String username,String password){
+
+    }
     }
