@@ -1,9 +1,9 @@
-package DealingCar.DealingCar;
+package DealingCar;
 
 import java.util.*;
 import java.util.stream.Collectors;
 
-import static DealingCar.DealingCar.Main.getInventory;
+import static DealingCar.Main.getInventory;
 
 public class CarInventory {
     private List<Car> cars;
