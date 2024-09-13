@@ -1,4 +1,4 @@
-package DealingCar.DealingCar;
+package DealingCar;
 
 import java.util.Date;
 
@@ -111,4 +111,8 @@ public abstract class User {
                 ", customerStatus=" + customerStatus +
                 '}';
     }
+
+    public abstract boolean isManager();
+
+    public abstract boolean isEmployee();
 }
