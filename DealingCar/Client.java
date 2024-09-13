@@ -1,6 +1,6 @@
 package DealingCar;
 
-public class client {
+public class Client {
     public int spending;
     public String membership;
     public int discountRate;
