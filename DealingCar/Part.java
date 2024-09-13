@@ -1,12 +1,13 @@
 package DealingCar;
 
-public class part {
+public class Part {
     private String partId;      // Unique ID for the part
+    private String partName;
     private String manufacturer;       // DealingCar.Car manufacturer
-    private int partnumber;
+    private int partNumber;
     private char condition;
     private int warranty;
-    private int cost;
+    private double cost;
     private String note;
 
     public String getPartId() {
@@ -16,6 +17,10 @@ public class part {
     public void setPartId(String partId) {
         this.partId = partId;
     }
+    
+    public String getPartName() { return partName; }
+    
+    public void setPartName(String partName) { this.partName = partName; }
 
     public String getManufacturer() {
         return manufacturer;
@@ -26,11 +31,11 @@ public class part {
     }
 
     public int getPartnumber() {
-        return partnumber;
+        return partNumber;
     }
 
     public void setPartnumber(int partnumber) {
-        this.partnumber = partnumber;
+        this.partNumber = partnumber;
     }
 
     public char getCondition() {
@@ -49,7 +54,7 @@ public class part {
         this.warranty = warranty;
     }
 
-    public int getCost() {
+    public double getCost() {
         return cost;
     }
 
@@ -66,8 +71,9 @@ public class part {
     }
     public void showpartDetails() {
         System.out.println("part Id: " + partId);
+        System.out.println("part name: " + partName);
         System.out.println("manufacturer: " + manufacturer);  // Updated display for brand
-        System.out.println("part number: " + partnumber);
+        System.out.println("part number: " + partNumber);
         System.out.println("condition: " + condition);
         System.out.println("warranty: " + warranty);
         System.out.println("cost: " + cost);
@@ -78,8 +84,9 @@ public class part {
     public String toString() {
         return "part{" +
                 "partId='" + partId + '\'' +
+                "partName='" + partName + '\'' +
                 ", manufacturer='" + manufacturer + '\'' +
-                ", part number=" + partnumber +
+                ", part number=" + partNumber +
                 ", condition=" + condition +
                 ", warranty=" + warranty +
                 ", cost=" + cost +

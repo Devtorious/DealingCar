@@ -1,4 +1,4 @@
-package DealingCar.DealingCar;
+package DealingCar;
 
 import java.security.Provider;
 import java.util.ArrayList;
