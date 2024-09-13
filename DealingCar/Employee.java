@@ -1,7 +1,7 @@
 package DealingCar;
 
 import java.util.Date;
-public class Employee extends DealingCar.DealingCar.User {
+public class Employee extends User {
     private int salary;
     private int revenue;
 
@@ -39,5 +39,15 @@ public class Employee extends DealingCar.DealingCar.User {
                 "salary=" + salary +
                 ", revenue=" + revenue +
                 '}';
+    }
+
+    @Override
+    public boolean isManager() {
+        return false;
+    }
+
+    @Override
+    public boolean isEmployee() {
+        return false;
     }
 }
