@@ -83,31 +83,31 @@ public class CarInventory {
 
     // display all cars
     public void displayCars() {
-        for (Car car : cars) {
+        for (DealingCar.Car car : cars) {
             car.showCarDetails();
         }
     }
 
     // Search cases
-    public List<Car> searchByBrand(String brand) {
+    public List<DealingCar.Car> searchByBrand(String brand) {
         return cars.stream()
                 .filter(car -> car.getBrand().equalsIgnoreCase(brand))
                 .collect(Collectors.toList());
     }
 
-    public List<Car> searchByModel(String model) {
+    public List<DealingCar.Car> searchByModel(String model) {
         return cars.stream()
                 .filter(car -> car.getModel().equalsIgnoreCase(model))
                 .collect(Collectors.toList());
     }
 
-    public List<Car> searchById(String carId) {
+    public List<DealingCar.Car> searchById(String carId) {
         return cars.stream()
                 .filter(car -> car.getCarId().equalsIgnoreCase(carId))
                 .collect(Collectors.toList());
     }
 
-    public List<Car> searchByColor(String color) {
+    public List<DealingCar.Car> searchByColor(String color) {
         return cars.stream()
                 .filter(car -> car.getColor().equalsIgnoreCase(color))
                 .collect(Collectors.toList());
@@ -121,28 +121,28 @@ public class CarInventory {
             case "brand":
                 System.out.println("Search by Brand: ");
                 String brand = scanner.nextLine().trim();
-                List<Car> brandCars = getInventory().searchByBrand(brand);
+                List<DealingCar.Car> brandCars = getInventory().searchByBrand(brand);
                 displaySearchResults(brandCars);
                 break;
 
             case "model":
                 System.out.println("Search by Model: ");
                 String model = scanner.nextLine().trim();
-                List<Car> modelCars = getInventory().searchByModel(model);
+                List<DealingCar.Car> modelCars = getInventory().searchByModel(model);
                 displaySearchResults(modelCars);
                 break;
 
             case "color":
                 System.out.println("Search by Color: ");
                 String color = scanner.nextLine().trim();
-                List<Car> colorCars = getInventory().searchByColor(color);
+                List<DealingCar.Car> colorCars = getInventory().searchByColor(color);
                 displaySearchResults(colorCars);
                 break;
 
             case "id":
                 System.out.println("Search by ID: ");
                 String id = scanner.nextLine().trim();
-                List<Car> idCars = getInventory().searchById(id);
+                List<DealingCar.Car> idCars = getInventory().searchById(id);
                 displaySearchResults(idCars);
                 break;
 
@@ -153,11 +153,11 @@ public class CarInventory {
     }
 
     //search result
-private static void displaySearchResults(List<Car> cars) {
+private static void displaySearchResults(List<DealingCar.Car> cars) {
     if (cars.isEmpty()) {
         System.out.println("No cars found matching the criteria.");
     } else {
-        for (Car car : cars) {
+        for (DealingCar.Car car : cars) {
             car.showCarDetails();
         }
     }
