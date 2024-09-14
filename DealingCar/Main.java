@@ -5,9 +5,9 @@ import java.util.Scanner;
 
 public class Main {
  // Create the car inventory
-     private static CarInventory inventory = new CarInventory();
+     private static DealingCar.CarInventory inventory = new DealingCar.CarInventory();
 
-     public static CarInventory getInventory() {
+     public static DealingCar.CarInventory getInventory() {
          return inventory;
      }
 
@@ -40,12 +40,12 @@ public class Main {
                     System.out.println();
                     System.out.println("Search by (brand, model, color, ID): ");
                     String searchBy = scanner.nextLine().trim().toLowerCase();
-                    CarInventory.searchCar(searchBy);
+                    DealingCar.CarInventory.searchCar(searchBy);
                     break;
 
                 case 3:
                     // add new car input
-                    Car.addNewCar();;
+                    DealingCar.Car.addNewCar();;
                     break;
 
                 case 4:
