@@ -1,6 +1,7 @@
 package DealingCar;
 
 import java.io.File;  // Import the File class
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Scanner; // Import the Scanner class to read text files
 
@@ -19,7 +20,8 @@ public class login {
             e.printStackTrace();
         }
         Scanner myObj = new Scanner(System.in);  // Create a Scanner object
-
+        String username = myObj.nextLine();
+        String password = myObj.nextLine();
 
 
         Scanner myReader = new Scanner("filename.txt");
@@ -45,7 +47,19 @@ public class login {
         }
         }
 
-    public static void vertifylogin(String username,String password){
+    public static void vertifylogin(String username,String password,String filepath){
+        Scanner x;
+        boolean found=false;
+        String temusername="";
+        String tempassword="";
+        try{
+            x=new Scanner(new File(filepath));
+            x.useDelimiter(",\n");
+            while(x.hasNext() && !found){
 
+            }
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
     }
     }
