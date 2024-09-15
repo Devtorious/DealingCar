@@ -5,8 +5,8 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.Scanner;
 
-public class TextFileLogin {
-    public static void main(String[] args) {
+public class Login {
+    public static void main(String filepath) {
         Scanner scanner = new Scanner(System.in);
         boolean loggedIn = false;
 
@@ -17,7 +17,7 @@ public class TextFileLogin {
             System.out.print("Enter password: ");
             String password = scanner.nextLine();
 
-            if (authenticateUser(username, password)) {
+            if (authenticateUser(username, password,filepath)) {
                 System.out.println("Login successful!");
                 loggedIn = true;
             } else {
@@ -29,9 +29,9 @@ public class TextFileLogin {
         // ...
     }
 
-    private static boolean authenticateUser(String username, String password) {
+    private static boolean authenticateUser(String username, String password,String path) {
         try {
-            BufferedReader reader = new BufferedReader(new FileReader("DealingCar/credentials.txt"));
+            BufferedReader reader = new BufferedReader(new FileReader(path));
             String line;
 
             while ((line = reader.readLine()) != null) {

@@ -12,9 +12,35 @@ public class Main {
      }
 
     public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Are you a: ");
+        System.out.println("1.Manager ");
+        System.out.println("2.Sale person ");
+        System.out.println("3. mechanic  ");
+        System.out.println("4. Client  ");
+        int role = scanner.nextInt();
+         //login
+        while (role==1||role==2||role==3||role==4)
+        switch (role){
+            case 1:
+                Login.main("DealingCar/manager.txt");
+                break;
+            case 2:
+                Login.main("DealingCar/saleperson.txt");
+                break;
+            case 3:
+                Login.main("DealingCar/mechanic.txt");
+                break;
+            case 4:
+                Login.main("DealingCar/client.txt");
+                break;
+            default:
+                role=0;
+                
+        }
 
              // Main UI
-        Scanner scanner = new Scanner(System.in);
+
         boolean exit = false;
 
         while (!exit) {
