@@ -19,28 +19,30 @@ public class Main {
         System.out.println("3. mechanic  ");
         System.out.println("4. Client  ");
         int role = scanner.nextInt();
-        boolean check=true;
+        int check=1;
          //login
-        while (check) {
+
             switch (role) {
                 case 1:
                     Login.main("DealingCar/manager.txt");
-                    check=false;
+                    break;
                 case 2:
                     Login.main("DealingCar/saleperson.txt");
-                    check=false;
+                    role=0;
+                    break;
                 case 3:
                     Login.main("DealingCar/mechanic.txt");
-                    check=false;
+                    role=0;
+                    break;
                 case 4:
                     Login.main("DealingCar/client.txt");
-                    check=false;
-                default:
-                    System.out.println("choose again");
+                    role=0;
+                    break;
 
 
-            }
-        }
+
+           }
+
              // Main UI
 
         boolean exit = false;
