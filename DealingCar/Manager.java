@@ -17,4 +17,11 @@ public class Manager extends User {
     public boolean isEmployee() {
         return false;
     }
+    //        Calendar cal = Calendar.getInstance();
+//        Calendar now= Calendar.getInstance();
+//        cal.set(Calendar.DAY_OF_MONTH, 1);
+//        Date firstDay = cal.getTime();
+//        Date current= now.getTime();
+//        System.out.println(firstDay);
+//        System.out.println(current);
 }
