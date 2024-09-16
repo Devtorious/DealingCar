@@ -7,7 +7,7 @@ import java.util.Scanner;
 public class Saleperson extends Employee {
 
     public Saleperson(String userID, String username, String userPassword, String name, Date userDOB, String userEmail, int userPhone, String userAddress, char customerStatus, int salary, int revenue) {
-        super("S" + userID, username, userPassword, name, userDOB, userEmail, userPhone, userAddress, customerStatus, salary, revenue);
+        super(userID, username, userPassword, name, userDOB, userEmail, userPhone, userAddress, customerStatus, salary, revenue);
     }
 
     public void createTransaction() {
