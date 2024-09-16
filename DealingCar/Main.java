@@ -28,15 +28,15 @@ public class Main {
                     break;
                 case 2:
                     Login.main("DealingCar/saleperson.txt");
-                    role=0;
+
                     break;
                 case 3:
                     Login.main("DealingCar/mechanic.txt");
-                    role=0;
+
                     break;
                 case 4:
                     Login.main("DealingCar/client.txt");
-                    role=0;
+
                     break;
 
 
