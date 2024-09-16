@@ -73,7 +73,7 @@ public class Register {
 
         // Generate new ID
         maxID++;
-        return String.format("%1%04d", maxID,word);
+        return String.format("%s%04d", maxID, word);
     }
 
     // Function to register a new Manager
@@ -180,6 +180,82 @@ public class Register {
 
         System.out.println("Salesperson registered successfully!");
     }
+
+    public static void registerMechanic() {
+        Scanner scanner = new Scanner(System.in);
+
+        // Generate a unique Mechanic ID
+        String userID = generateUniqueID("mechanic.txt","m");
+
+        System.out.println("Generated Mechanic ID: " + userID);
+
+        // Collect input from user
+        System.out.println("Enter Username: ");
+        String username = scanner.nextLine();
+
+        // Check if the username already exists
+        if (isUsernameTaken("mechanic.txt", username)) {
+            System.out.println("Username already exists! Please choose a different one.");
+            return;
+        }
+
+        System.out.println("Enter Password: ");
+        String userPassword = scanner.nextLine();
+
+        System.out.println("Enter Name: ");
+        String name = scanner.nextLine();
+
+        System.out.println("Enter Date of Birth (dd/MM/yyyy): ");
+        Date userDOB = formater(scanner.nextLine());
+
+        System.out.println("Enter Email: ");
+        String userEmail = scanner.nextLine();
+
+        System.out.println("Enter Phone Number: ");
+        int userPhone = scanner.nextInt();
+
+        scanner.nextLine(); // Consume newline
+
+        System.out.println("Enter Address: ");
+        String userAddress = scanner.nextLine();
+
+        System.out.println("Enter Customer Status (e.g., 'A' or 'B'): ");
+        char customerStatus = scanner.next().charAt(0);
+
+        System.out.println("Enter Salary: ");
+        int salary = scanner.nextInt();
+
+        System.out.println("Enter Revenue: ");
+        int revenue = scanner.nextInt();
+
+        // Create new Mechanic object
+        Mechanic newMechanic = new Mechanic(userID, username, userPassword, name, userDOB, userEmail, userPhone, userAddress, customerStatus, salary, revenue);
+
+        // Write Mechanic details to file
+        saveMechanicToFile(newMechanic);
+
+        System.out.println("Mechanic registered successfully!");
+    }
+
+    private static void saveMechanicToFile(Mechanic mechanic) {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter("mechanic.txt", true))) {
+            writer.write(mechanic.getUserID() + "," +
+                    mechanic.getUsername() + "," +
+                    mechanic.getUserPassword() + "," +
+                    mechanic.getName() + "," +
+                    mechanic.getUserDOB() + "," +
+                    mechanic.getUserEmail() + "," +
+                    mechanic.getUserPhone() + "," +
+                    mechanic.getUserAddress() + "," +
+                    mechanic.getCustomerStatus() + "," +
+                    mechanic.getSalary() + "," +
+                    mechanic.getRevenue() + "\n");
+        } catch (IOException e) {
+            System.out.println("An error occurred while writing to file.");
+            e.printStackTrace();
+        }
+    }
+
 
     private static void saveSalepersonToFile(Saleperson saleperson) {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter("saleperson.txt", true))) {
