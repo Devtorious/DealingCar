@@ -10,7 +10,7 @@ public class Mechanic extends Employee{
     private List<String> serviceHistory; // Keeps track of services performed by the mechanic
 
     public Mechanic(String userID, String username, String userPassword, String name, Date userDOB, String userEmail, int userPhone, String userAddress, char customerStatus, int salary, int revenue) {
-        super("M" + userID, username, userPassword, name, userDOB, userEmail, userPhone, userAddress, customerStatus, salary, revenue);
+        super(userID, username, userPassword, name, userDOB, userEmail, userPhone, userAddress, customerStatus, salary, revenue);
         this.serviceHistory = new ArrayList<>(); // Initialize an empty service history
     }
 
