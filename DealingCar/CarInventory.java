@@ -180,62 +180,76 @@ public class CarInventory {
 
     //modify car
     public void updateCarById(String carId) {
-        Car car = findCarById(carId);
-        if (car == null) {
-            System.out.println("Error: No car found with ID " + carId);
-            return;
-        }
 
-        Scanner scanner = new Scanner(System.in);
-        int choice = -1;
 
-        while (choice != 9) {
-            System.out.println("Choose what information to modify:");
-            System.out.println("1. Brand");
-            System.out.println("2. Model");
-            System.out.println("3. Year");
-            System.out.println("4. Mileage");
-            System.out.println("5. Color");
-            System.out.println("6. Status");
-            System.out.println("7. Price");
-            System.out.println("8. Note");
-            System.out.println("9. Finish");
-            System.out.print("Choose an option: ");
-
-            choice = scanner.nextInt();
-            scanner.nextLine();
-
-            switch (choice) {
-                case 1:
-                    modifyAttribute("Brand", car.getBrand(), scanner, (newValue) -> car.setBrand(newValue));
-                    break;
-                case 2:
-                    modifyAttribute("Model", car.getModel(), scanner, (newValue) -> car.setModel(newValue));
-                    break;
-                case 3:
-                    modifyAttribute("Year", String.valueOf(car.getYear()), scanner, (newValue) -> car.setYear(Integer.parseInt(newValue)));
-                    break;
-                case 4:
-                    modifyAttribute("Mileage", String.valueOf(car.getMileage()), scanner, (newValue) -> car.setMileage(Long.parseLong(newValue)));
-                    break;
-                case 5:
-                    modifyAttribute("Color", car.getColor(), scanner, (newValue) -> car.setColor(newValue));
-                    break;
-                case 6:
-                    modifyAttribute("Status (true for available, false for sold)", String.valueOf(car.isStatus()), scanner, (newValue) -> car.setStatus(Boolean.parseBoolean(newValue)));
-                    break;
-                case 7:
-                    modifyAttribute("Price", String.valueOf(car.getPrice()), scanner, (newValue) -> car.setPrice(Double.parseDouble(newValue)));
-                    break;
-                case 8:
-                    modifyAttribute("Note", car.getNotes(), scanner, car::setNotes);
-                    break;
-                case 9:
-                    System.out.println("Update finished.");
-                    break;
-                default:
-                    System.out.println("Invalid choice. Please choose again.");
+        if (carId.matches(carIdFormat)) {
+            Car car = findCarById(carId);
+            if (car == null) {
+                System.out.println("Error: No car found with ID " + carId);
+                return;
             }
+            else {
+
+                Scanner scanner = new Scanner(System.in);
+                int choice = -1;
+
+                while (choice != 9) {
+                    System.out.println("Choose what information to modify:");
+                    System.out.println("1. Brand: " + car.getBrand());
+                    System.out.println("2. Model: " + car.getModel());
+                    System.out.println("3. Year: " + car.getYear());
+                    System.out.println("4. Mileage: " + car.getMileage());
+                    System.out.println("5. Color: " + car.getColor());
+                    System.out.println("6. Status: " + car.isStatus());
+                    System.out.println("7. Price: " + car.getPrice() + " USD");
+                    System.out.println("8. Note: " + car.getNotes());
+                    System.out.println("9. Finish");
+                    System.out.print("Choose an option: ");
+
+                    choice = scanner.nextInt();
+                    scanner.nextLine();
+
+                    switch (choice) {
+                        case 1:
+                            modifyAttribute("Brand", car.getBrand(), scanner, (newValue) -> car.setBrand(newValue));
+                            break;
+                        case 2:
+                            modifyAttribute("Model", car.getModel(), scanner, (newValue) -> car.setModel(newValue));
+                            break;
+                        case 3:
+                            modifyAttribute("Year", String.valueOf(car.getYear()), scanner, (newValue) -> car.setYear(Integer.parseInt(newValue)));
+                            break;
+                        case 4:
+                            modifyAttribute("Mileage", String.valueOf(car.getMileage()), scanner, (newValue) -> car.setMileage(Long.parseLong(newValue)));
+                            break;
+                        case 5:
+                            modifyAttribute("Color", car.getColor(), scanner, (newValue) -> car.setColor(newValue));
+                            break;
+                        case 6:
+                            modifyAttribute("Status (true for available, false for sold)", String.valueOf(car.isStatus()), scanner, (newValue) -> car.setStatus(Boolean.parseBoolean(newValue)));
+                            break;
+                        case 7:
+                            modifyAttribute("Price", String.valueOf(car.getPrice()), scanner, (newValue) -> car.setPrice(Double.parseDouble(newValue)));
+                            break;
+                        case 8:
+                            modifyAttribute("Note", car.getNotes(), scanner, car::setNotes);
+                            break;
+                        case 9:
+                            System.out.println("Update finished.");
+                            System.out.println("--------------------------------------");
+
+                            break;
+                        default:
+                            System.out.println("Invalid choice. Please choose again.");
+                            System.out.println("--------------------------------------");
+                    }
+                }
+            }
+        }
+        else {
+            System.out.println("Invalid Car ID Format (" + carId + ")");
+            System.out.println("Car added failed");
+            System.out.println("--------------------------------------");
         }
     }
 
@@ -251,8 +265,12 @@ public class CarInventory {
         if (confirmation.equalsIgnoreCase("yes")) {
             callback.update(newValue);
             System.out.println(attributeName + " has been updated to: " + newValue);
+            System.out.println("--------------------------------------");
+
         } else {
             System.out.println(attributeName + " update canceled.");
+            System.out.println("--------------------------------------");
+
         }
     }
 
