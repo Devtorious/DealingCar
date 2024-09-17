@@ -70,6 +70,7 @@ public class Main {
                         System.out.println("5. Search for a car");
                         System.out.println("6. Add a new car");
                         System.out.println("7. Delete car by ID");
+                        System.out.println("8. Update cars' information");
                         System.out.println("0: return");
                         System.out.print("Choose an option: ");
                         admin = scan.nextInt();
@@ -110,6 +111,13 @@ public class Main {
                                 System.out.println("Type the ID of the car that you want to delete:");
                                 String deleteBy = scanner.nextLine().trim().toUpperCase();
                                 inventory.deleteCarById(deleteBy);
+                            case 8:
+                                // Updating car information by ID
+                                System.out.println("Enter the ID of the car you want to modify: ");
+                                String carIdToUpdate = scanner.nextLine().trim().toUpperCase();
+                                inventory.updateCarById(carIdToUpdate);
+                                break;
+
                             case 0:
                                 System.out.println("return...");
                                 break;
