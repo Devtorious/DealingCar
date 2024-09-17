@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.util.Scanner;
 
 public class Login {
-    public static void main(String filepath) {
+    public static boolean main(String filepath) {
         Scanner scanner = new Scanner(System.in);
         boolean loggedIn = false;
 
@@ -24,9 +24,7 @@ public class Login {
                 System.out.println("Invalid username or password. Please try again.");
             }
         }
-
-        // Perform actions after successful login
-        // ...
+        return loggedIn;
     }
 
     private static boolean authenticateUser(String username, String password,String path) {
