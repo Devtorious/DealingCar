@@ -25,11 +25,11 @@ public class CarInventory {
             while (iterator.hasNext()) {
                 Car car = iterator.next();
                 if (car.getCarId().equals(carId)) {
-                    iterator.remove();  // Safely remove the car from the list
-                    carIds.remove(carId);  // Also remove the carId from the set
+                    iterator.remove();  // remove the car from the list
+                    carIds.remove(carId);  // remove the carId from the set
                     System.out.println("Car with ID " + carId + " has been removed.");
                     System.out.println("--------------------------------------");
-                    return true;  // Car deleted successfully
+                    return true;
                 }
             }
             System.out.println("Error: No car found with ID " + carId);
