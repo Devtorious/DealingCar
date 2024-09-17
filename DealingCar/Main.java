@@ -12,39 +12,19 @@ public class Main {
      }
 
     public static void main(String[] args) {
+        System.out.println("COSC2081 GROUP ASSIGNMENT");
+        System.out.println("AUTO168 CAR DEALERSHIP MANAGEMENT SYSTEM");
+        System.out.println("Instructor: Mr. Minh Vu & Mr. Dung Nguyen");
+        System.out.println(" Group: Group Name");
+        System.out.println("sXXXXXXX, Student Name");
+        System.out.println("sXXXXXXX, Student Name");
+        System.out.println("sXXXXXXX, Student Name");
+
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Are you a: ");
-        System.out.println("1.Manager ");
-        System.out.println("2.Sale person ");
-        System.out.println("3. mechanic  ");
-        System.out.println("4. Client  ");
-        int role = scanner.nextInt();
-        int check=1;
-         //login
 
-            switch (role) {
-                case 1:
-                    Login.main("DealingCar/manager.txt");
-                    break;
-                case 2:
-                    Login.main("DealingCar/saleperson.txt");
-
-                    break;
-                case 3:
-                    Login.main("DealingCar/mechanic.txt");
-
-                    break;
-                case 4:
-                    Login.main("DealingCar/client.txt");
-
-                    break;
-
-
-
-           }
 
              // Main UI
-
+/*
         boolean exit = false;
 
         while (!exit) {
@@ -90,108 +70,128 @@ public class Main {
 
             }
         }
-        scanner.close();
-     // Scanner scan = new Scanner(System.in);
-//        int n = -1;
-//
-//        // Vòng lặp while để người dùng có thể quay lại menu chính
-//        while (n != 0) {
-//            System.out.println("Chọn vai trò của bạn:");
-//            System.out.println("1: Admin");
-//            System.out.println("2: Sale");
-//            System.out.println("3: Customer");
-//            System.out.println("0: Thoát");
-//            n = scan.nextInt();
-//
-//            switch (n) {
-//                case 1:
-//                    int admin = -1;
-//                    while (admin != 0) {
-//                        System.out.println("1: Xem doanh thu theo tháng");
-//                        System.out.println("2: Xem doanh thu theo ngày");
-//                        System.out.println("3: Xem danh sách nhân viên");
-//                        System.out.println("0: Quay lại menu chính");
-//                        admin = scan.nextInt();
-//
-//                        switch (admin) {
-//                            case 1:
-//                                System.out.println("Đang chạy chương trình doanh thu theo tháng");
-//                                System.out.println("Kết quả là: ");
-//                                break;
-//                            case 2:
-//                                System.out.println("Đang chạy chương trình doanh thu theo ngày");
-//                                System.out.println("Kết quả là: ");
-//                                break;
-//                            case 3:
-//                                System.out.println("Đang chạy chương trình danh sách nhân viên");
-//                                System.out.println("Kết quả là: ");
-//                                break;
-//                            case 0:
-//                                System.out.println("Quay lại menu chính...");
-//                                break;
-//                            default:
-//                                System.out.println("Lựa chọn không hợp lệ, vui lòng chọn lại.");
-//                        }
-//                    }
-//                    break;
-//
-//                case 2:
-//                    int sale = -1;
-//                    while (sale != 0) {
-//                        System.out.println("1: Tạo hoá đơn giao dịch");
-//                        System.out.println("2: Xem danh sách xe");
-//                        System.out.println("0: Quay lại menu chính");
-//                        sale = scan.nextInt();
-//
-//                        switch (sale) {
-//                            case 1:
-//                                System.out.println("Đang tạo hóa đơn giao dịch...");
-//                                break;
-//                            case 2:
-//                                System.out.println("Đang xem danh sách xe...");
-//                                break;
-//                            case 0:
-//                                System.out.println("Quay lại menu chính...");
-//                                break;
-//                            default:
-//                                System.out.println("Lựa chọn không hợp lệ, vui lòng chọn lại.");
-//                        }
-//                    }
-//                    break;
-//
-//                case 3:
-//                    int customer = -1;
-//                    while (customer != 0) {
-//                        System.out.println("1: Xem danh sách đã mua");
-//                        System.out.println("2: Xem danh sách xe");
-//                        System.out.println("0: Quay lại menu chính");
-//                        customer = scan.nextInt();
-//
-//                        switch (customer) {
-//                            case 1:
-//                                System.out.println("Đang xem danh sách đã mua...");
-//                                break;
-//                            case 2:
-//                                System.out.println("Đang xem danh sách xe...");
-//                                break;
-//                            case 0:
-//                                System.out.println("Quay lại menu chính...");
-//                                break;
-//                            default:
-//                                System.out.println("Lựa chọn không hợp lệ, vui lòng chọn lại.");
-//                        }
-//                    }
-//                    break;
-//
-//                case 0:
-//                    System.out.println("Thoát chương trình...");
-//                    break;
-//
-//                default:
-//                    System.out.println("Lựa chọn không hợp lệ, vui lòng chọn lại.");
-//            }
-//        }
-//
-//        scan.close();
+        scanner.close();*/
+
+      Scanner scan = new Scanner(System.in);
+        int n = -1;
+
+//         Vòng lặp while để người dùng có thể quay lại menu chính
+        while (n != 0) {
+            System.out.println("choose your role");
+            System.out.println("1: Admin");
+            System.out.println("2: Sale");
+            System.out.println("3: Customer");
+            System.out.println("0: exit");
+            n = scan.nextInt();
+            switch (n) {
+                case 1:
+                    Login.main("DealingCar/manager.txt");
+                    break;
+                case 2:
+                    Login.main("DealingCar/saleperson.txt");
+
+                    break;
+                case 3:
+                    Login.main("DealingCar/mechanic.txt");
+
+                    break;
+                case 4:
+                    Login.main("DealingCar/client.txt");
+
+                    break;
+
+
+            }
+
+            switch (n) {
+                case 1:
+                    int admin = -1;
+                    while (admin != 0) {
+                        System.out.println("1: revenue base on month");
+                        System.out.println("2: revenue base on day");
+                        System.out.println("3: employee list");
+                        System.out.println("0: return");
+                        admin = scan.nextInt();
+
+                        switch (admin) {
+                            case 1:
+                                System.out.println(" moth revenue ");
+                                System.out.println("Kết quả là: ");
+                                break;
+                            case 2:
+                                System.out.println(" day revenue");
+                                System.out.println("Kết quả là: ");
+                                break;
+                            case 3:
+                                System.out.println(" view employee list ");
+                                System.out.println("Kết quả là: ");
+                                break;
+                            case 0:
+                                System.out.println("return...");
+                                break;
+                            default:
+                                System.out.println("invalid input, please choose again .");
+                        }
+                    }
+                    break;
+
+                case 2:
+                    int sale = -1;
+                    while (sale != 0) {
+                        System.out.println("1: create sale transaction");
+                        System.out.println("2: view car list");
+                        System.out.println("0: return");
+                        sale = scan.nextInt();
+
+                        switch (sale) {
+                            case 1:
+                                System.out.println(" create transaction...");
+                                break;
+                            case 2:
+                                System.out.println(" car list...");
+                                break;
+                            case 0:
+                                System.out.println("return...");
+                                break;
+                            default:
+                                System.out.println("invalid input, please choose again .");
+                        }
+                    }
+                    break;
+
+                case 3:
+                    int customer = -1;
+                    while (customer != 0) {
+                        System.out.println("1: Xem danh sách đã mua");
+                        System.out.println("2: Xem danh sách xe");
+                        System.out.println("0: return");
+                        customer = scan.nextInt();
+
+                        switch (customer) {
+                            case 1:
+                                System.out.println("Đang xem danh sách đã mua...");
+                                break;
+                            case 2:
+                                System.out.println("Đang xem danh sách xe...");
+                                break;
+                            case 0:
+                                System.out.println("return...");
+                                break;
+                            default:
+                                System.out.println("invalid input, please choose again .");
+                        }
+                    }
+                    break;
+
+                case 0:
+                    System.out.println("Exit...");
+                    break;
+
+                default:
+                    System.out.println("invalid input, please choose again .");
+            }
+        }
+
+        scan.close();
     }
 }
