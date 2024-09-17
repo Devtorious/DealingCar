@@ -24,18 +24,18 @@ public class Main {
 
             switch (role) {
                 case 1:
-                    Login.main("DealingCar/manager.txt");
+                    DealingCar.Login.main("DealingCar/manager.txt");
                     break;
                 case 2:
-                    Login.main("DealingCar/saleperson.txt");
+                    DealingCar.Login.main("DealingCar/saleperson.txt");
 
                     break;
                 case 3:
-                    Login.main("DealingCar/mechanic.txt");
+                    DealingCar.Login.main("DealingCar/mechanic.txt");
 
                     break;
                 case 4:
-                    Login.main("DealingCar/client.txt");
+                    DealingCar.Login.main("DealingCar/client.txt");
 
                     break;
 
