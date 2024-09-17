@@ -132,7 +132,7 @@ public class Main {
                                 System.out.println(" create transaction...");
                                 break;
                             case 2:
-                                System.out.println(" car list: ");
+                                System.out.println("Cars list: ");
                                 inventory.displayCars();
                                 break;
                             case 0:
