@@ -18,6 +18,32 @@ public class CarInventory {
         initializerCars();
     }
 
+    //delete car by ID
+    public boolean deleteCarById(String carId) {
+        Iterator<Car> iterator = cars.iterator();
+        if (carId.matches(carIdFormat)) {
+            while (iterator.hasNext()) {
+                Car car = iterator.next();
+                if (car.getCarId().equals(carId)) {
+                    iterator.remove();  // Safely remove the car from the list
+                    carIds.remove(carId);  // Also remove the carId from the set
+                    System.out.println("Car with ID " + carId + " has been removed.");
+                    System.out.println("--------------------------------------");
+                    return true;  // Car deleted successfully
+                }
+            }
+            System.out.println("Error: No car found with ID " + carId);
+            return false;
+        }
+        else {
+            System.out.println("Invalid Car ID Format (" + carId + ")");
+            System.out.println("Car added failed");
+            System.out.println("--------------------------------------");
+            return false;
+
+        }
+    }
+
     //initial cars
     private void   initializerCars() {
         // Create a new car instance
@@ -162,5 +188,4 @@ private static void displaySearchResults(List<DealingCar.Car> cars) {
         }
     }
 }
-
 }

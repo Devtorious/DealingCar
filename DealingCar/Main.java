@@ -24,64 +24,19 @@ public class Main {
 
 
              // Main UI
-/*
-        boolean exit = false;
 
-        while (!exit) {
-            System.out.println("1. Display all cars");
-            System.out.println("2. Search for a car");
-            System.out.println("3. Add a new car");
-            System.out.println("4. Exit");
-            System.out.print("Choose an option: ");
-
-            int choice = scanner.nextInt();
-            scanner.nextLine();
-
-            switch (choice) {
-                case 1:
-                    // display all cars
-                    System.out.println("--------------------------------------");
-                    System.out.println("Cars list:");
-                    inventory.displayCars();
-                    break;
-
-                case 2:
-                    // search car
-                    System.out.println();
-                    System.out.println("Search by (brand, model, color, ID): ");
-                    String searchBy = scanner.nextLine().trim().toLowerCase();
-                    DealingCar.CarInventory.searchCar(searchBy);
-                    break;
-
-                case 3:
-                    // add new car input
-                    DealingCar.Car.addNewCar();;
-                    break;
-
-                case 4:
-                    // exit
-                    exit = true;
-                    System.out.println("Exiting...");
-                    break;
-
-                default:
-                    System.out.println("Invalid option. Please choose again.");
-                    System.out.println("--------------------------------------");
-
-            }
-        }
-        scanner.close();*/
 
       Scanner scan = new Scanner(System.in);
         int n = -1;
 
 //         Vòng lặp while để người dùng có thể quay lại menu chính
         while (n != 0) {
-            System.out.println("choose your role");
+            System.out.println("--------------------------------------");
             System.out.println("1: Admin");
             System.out.println("2: Sale");
             System.out.println("3: Customer");
             System.out.println("0: exit");
+            System.out.print("Choose your role: ");
             n = scan.nextInt();
             switch (n) {
                 case 1:
@@ -97,12 +52,11 @@ public class Main {
                     break;
                 case 4:
                     Login.main("DealingCar/client.txt");
-
                     break;
-
 
             }
 
+            // admin (manager) function
             switch (n) {
                 case 1:
                     int admin = -1;
@@ -110,7 +64,12 @@ public class Main {
                         System.out.println("1: revenue base on month");
                         System.out.println("2: revenue base on day");
                         System.out.println("3: employee list");
+                        System.out.println("4. Display all cars");
+                        System.out.println("5. Search for a car");
+                        System.out.println("6. Add a new car");
+                        System.out.println("7. Delete car by ID");
                         System.out.println("0: return");
+                        System.out.print("Choose an option: ");
                         admin = scan.nextInt();
 
                         switch (admin) {
@@ -126,6 +85,29 @@ public class Main {
                                 System.out.println(" view employee list ");
                                 System.out.println("Kết quả là: ");
                                 break;
+                            case 4:
+                            // display all cars
+                            System.out.println("--------------------------------------");
+                            System.out.println("Cars list:");
+                            inventory.displayCars();
+                            break;
+
+                            case 5:
+                                // search car
+                                System.out.println();
+                                System.out.println("Search by (brand, model, color, ID): ");
+                                String searchBy = scanner.nextLine().trim().toLowerCase();
+                                DealingCar.CarInventory.searchCar(searchBy);
+                                break;
+                            case 6:
+                                // add new car input
+                                DealingCar.Car.addNewCar();
+                                break;
+                            case 7:
+                                //delete car by ID
+                                System.out.println("Type the ID of the car that you want to delete:");
+                                String deleteBy = scanner.nextLine().trim().toUpperCase();
+                                inventory.deleteCarById(deleteBy);
                             case 0:
                                 System.out.println("return...");
                                 break;
@@ -184,14 +166,13 @@ public class Main {
                     break;
 
                 case 0:
-                    System.out.println("Exit...");
+                    System.out.println("Exiting...");
                     break;
 
                 default:
                     System.out.println("invalid input, please choose again .");
             }
         }
-
         scan.close();
     }
 }
