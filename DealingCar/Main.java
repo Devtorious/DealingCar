@@ -13,11 +13,12 @@ public class Main {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Are you a: ");
+        System.out.println("Sign in as: ");
         System.out.println("1.Manager ");
         System.out.println("2.Sale person ");
         System.out.println("3. mechanic  ");
         System.out.println("4. Client  ");
+        System.out.println("Choose an option: ");
         int role = scanner.nextInt();
         int check=1;
          //login
@@ -28,7 +29,6 @@ public class Main {
                     break;
                 case 2:
                     DealingCar.Login.main("DealingCar/saleperson.txt");
-
                     break;
                 case 3:
                     DealingCar.Login.main("DealingCar/mechanic.txt");
@@ -39,58 +39,62 @@ public class Main {
 
                     break;
 
-
-
            }
 
              // Main UI
 
         boolean exit = false;
 
-        while (!exit) {
-            System.out.println("1. Display all cars");
-            System.out.println("2. Search for a car");
-            System.out.println("3. Add a new car");
-            System.out.println("4. Exit");
-            System.out.print("Choose an option: ");
+        switch (role) {
+            case 1:
+                if (DealingCar.Login.main("DealingCar/manager.txt")) {
+                    while (!exit) {
+                        System.out.println("1. Display all cars");
+                        System.out.println("2. Search for a car");
+                        System.out.println("3. Add a new car");
+                        System.out.println("4. Exit");
+                        System.out.print("Choose an option: ");
 
-            int choice = scanner.nextInt();
-            scanner.nextLine();
+                        int choice = scanner.nextInt();
+                        scanner.nextLine();
 
-            switch (choice) {
-                case 1:
-                    // display all cars
-                    System.out.println("--------------------------------------");
-                    System.out.println("Cars list:");
-                    inventory.displayCars();
-                    break;
+                        switch (choice) {
+                            case 1:
+                                // display all cars
+                                System.out.println("--------------------------------------");
+                                System.out.println("Cars list:");
+                                inventory.displayCars();
+                                break;
 
-                case 2:
-                    // search car
-                    System.out.println();
-                    System.out.println("Search by (brand, model, color, ID): ");
-                    String searchBy = scanner.nextLine().trim().toLowerCase();
-                    DealingCar.CarInventory.searchCar(searchBy);
-                    break;
+                            case 2:
+                                // search car
+                                System.out.println();
+                                System.out.println("Search by (brand, model, color, ID): ");
+                                String searchBy = scanner.nextLine().trim().toLowerCase();
+                                DealingCar.CarInventory.searchCar(searchBy);
+                                break;
 
-                case 3:
-                    // add new car input
-                    DealingCar.Car.addNewCar();;
-                    break;
+                            case 3:
+                                // add new car input
+                                DealingCar.Car.addNewCar();
+                                ;
+                                break;
 
-                case 4:
-                    // exit
-                    exit = true;
-                    System.out.println("Exiting...");
-                    break;
+                            case 4:
+                                // exit
+                                exit = true;
+                                System.out.println("Exiting...");
+                                break;
 
-                default:
-                    System.out.println("Invalid option. Please choose again.");
-                    System.out.println("--------------------------------------");
+                            default:
+                                System.out.println("Invalid option. Please choose again.");
+                                System.out.println("--------------------------------------");
 
-            }
+                        }
+                    }
+                    scanner.close();
+                }
         }
-        scanner.close();
      // Scanner scan = new Scanner(System.in);
 //        int n = -1;
 //
