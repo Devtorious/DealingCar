@@ -12,13 +12,15 @@ public class Main {
      }
 
     public static void main(String[] args) {
-        System.out.println("COSC2081 GROUP ASSIGNMENT");
-        System.out.println("AUTO168 CAR DEALERSHIP MANAGEMENT SYSTEM");
-        System.out.println("Instructor: Mr. Minh Vu & Mr. Dung Nguyen");
-        System.out.println(" Group: Group Name");
-        System.out.println("s3979209, Nguyen Huynh Gia Khang");
-        System.out.println("sXXXXXXX, Student Name");
-        System.out.println("sXXXXXXX, Student Name");
+        System.out.println(" _______________________________________________");
+        System.out.println("| COSC2081 GROUP ASSIGNMENT                   |");
+        System.out.println("| AUTO168 CAR DEALERSHIP MANAGEMENT SYSTEM    |");
+        System.out.println("| Instructor: Mr. Minh Vu & Mr. Dung Nguyen   |");
+        System.out.println("| Group: Group Name                           |");
+        System.out.println("| s3979209, Nguyen Huynh Gia Khang            |");
+        System.out.println("| sXXXXXXX, Student Name                      |");
+        System.out.println("| sXXXXXXX, Student Name                      |");
+        System.out.println(" _____________________________________________");
 
         Scanner scanner = new Scanner(System.in);
 
@@ -130,7 +132,8 @@ public class Main {
                                 System.out.println(" create transaction...");
                                 break;
                             case 2:
-                                System.out.println(" car list...");
+                                System.out.println(" car list: ");
+                                inventory.displayCars();
                                 break;
                             case 0:
                                 System.out.println("return...");
