@@ -53,7 +53,7 @@ public class Main {
 
                     break;
                 case 4:
-                    Login.main("DealingCar/client.txt");
+                    Login.main("client.txt");
                     break;
 
             }
