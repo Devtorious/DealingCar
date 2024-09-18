@@ -71,6 +71,10 @@ public class Main {
                         System.out.println("6. Add a new car");
                         System.out.println("7. Delete car by ID");
                         System.out.println("8. Update cars' information");
+                        System.out.println("9. Add Manager");
+                        System.out.println("9. Add Mechanic");
+                        System.out.println("9. Add Saleperson");
+
                         System.out.println("0: return");
                         System.out.print("Choose an option: ");
                         admin = scan.nextInt();
@@ -78,7 +82,7 @@ public class Main {
                         switch (admin) {
                             case 1:
                                 System.out.println(" moth revenue ");
-                                System.out.println("Kết quả là: ");
+
                                 break;
                             case 2:
                                 System.out.println(" day revenue");
@@ -117,6 +121,13 @@ public class Main {
                                 String carIdToUpdate = scanner.nextLine().trim().toUpperCase();
                                 inventory.updateCarById(carIdToUpdate);
                                 break;
+                            case 9:
+                                Register.registerManager();
+                            case 10:
+                                Register.registerMechanic();
+                            case 11:
+                                Register.registerSaleperson();
+
 
                             case 0:
                                 System.out.println("return...");
