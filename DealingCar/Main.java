@@ -30,6 +30,7 @@ public class Main {
 
       Scanner scan = new Scanner(System.in);
         int n = -1;
+        boolean check = false;
 
 //         Vòng lặp while để người dùng có thể quay lại menu chính
         while (n != 0) {
@@ -42,8 +43,21 @@ public class Main {
             n = scan.nextInt();
             switch (n) {
                 case 1:
-                    Login.main("DealingCar/manager.txt");
-                    break;
+                    while (!check) {
+                        System.out.println("1. Login");
+                        System.out.println("2. Register");
+                        System.out.println("Choose an option: ");
+                        int login = scan.nextInt();
+                        switch (login) {
+                            case 1:
+                                Login.main("DealingCar/manager.txt");
+                                check = true;
+                                break;
+                            case 2:
+                                Register.registerManager();
+                        }
+                    }
+
                 case 2:
                     Login.main("DealingCar/saleperson.txt");
 
