@@ -81,7 +81,7 @@ public class Register {
         Scanner scanner = new Scanner(System.in);
 
         // Generate a unique Manager ID
-        String userID = generateUniqueID("manager.txt","M");
+        String userID = generateUniqueID("DealingCar/manager.txt","M");
 
         System.out.println("Generated Manager ID: " + userID);
 
@@ -90,7 +90,7 @@ public class Register {
         String username = scanner.nextLine();
 
         // Check if the username already exists
-        if (isUsernameTaken("manager.txt",username)) {
+        if (isUsernameTaken("DealingCar/manager.txt",username)) {
             System.out.println("Username already exists! Please choose a different one.");
             return;
         }

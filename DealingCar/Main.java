@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class Main {
  // Create the car inventory
-     private static DealingCar.CarInventory inventory = new DealingCar.CarInventory();
+     private static final DealingCar.CarInventory inventory = new DealingCar.CarInventory();
 
      public static DealingCar.CarInventory getInventory() {
          return inventory;
@@ -42,14 +42,14 @@ public class Main {
             n = scan.nextInt();
             switch (n) {
                 case 1:
-                    Login.main("DealingCar/manager.txt");
+                    Login.main("manager.txt");
                     break;
                 case 2:
-                    Login.main("DealingCar/saleperson.txt");
+                    Login.main("saleperson.txt");
 
                     break;
                 case 3:
-                    Login.main("DealingCar/mechanic.txt");
+                    Login.main("mechanic.txt");
 
                     break;
                 case 4:
@@ -72,8 +72,8 @@ public class Main {
                         System.out.println("7. Delete car by ID");
                         System.out.println("8. Update cars' information");
                         System.out.println("9. Add Manager");
-                        System.out.println("9. Add Mechanic");
-                        System.out.println("9. Add Saleperson");
+                        System.out.println("10. Add Mechanic");
+                        System.out.println("11. Add Saleperson");
 
                         System.out.println("0: return");
                         System.out.print("Choose an option: ");
@@ -123,11 +123,13 @@ public class Main {
                                 break;
                             case 9:
                                 Register.registerManager();
+                                break;
                             case 10:
                                 Register.registerMechanic();
+                                break;
                             case 11:
                                 Register.registerSaleperson();
-
+                                break;
 
                             case 0:
                                 System.out.println("return...");
@@ -187,6 +189,7 @@ public class Main {
                         }
                     }
                     break;
+                case 4:
 
                 case 0:
                     System.out.println("Exiting...");

@@ -34,7 +34,7 @@ public class Login {
 
             while ((line = reader.readLine()) != null) {
                 String[] credentials = line.split(",");
-                if (credentials[0].equals(username) && credentials[1].equals(password)) {
+                if (credentials[1].equals(username) && credentials[2].equals(password)) {
                     reader.close();
                     return true;
                 }
