@@ -73,7 +73,8 @@ public class Main {
                         System.out.println("8. Update cars' information");
                         System.out.println("9. Add Manager");
                         System.out.println("10. Add Mechanic");
-                        System.out.println("11. Add Saleperson");
+                        System.out.println("11. Add Salesperson");
+                        System.out.println("11. Add client");
 
                         System.out.println("0: return");
                         System.out.print("Choose an option: ");

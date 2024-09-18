@@ -239,7 +239,57 @@ public class Register {
 
         System.out.println("Mechanic registered successfully!");
     }
+    public static void registerclient() {
+        Scanner scanner = new Scanner(System.in);
 
+        System.out.println("Enter Salesperson ID: ");
+        String userID = generateUniqueID("client.txt","S");
+
+        System.out.println("Enter Username: ");
+        String username = scanner.nextLine();
+        // Check if the username already exists
+
+        if (isUsernameTaken("client.txt",username)) {
+            System.out.println("Username already exists! Please choose a different one.");
+            return;
+        }
+
+        System.out.println("Enter Password: ");
+        String userPassword = scanner.nextLine();
+
+        System.out.println("Enter Name: ");
+        String name = scanner.nextLine();
+
+        System.out.println("Enter Date of Birth (dd/MM/yyyy): ");
+        String DOB = scanner.nextLine();
+        Date userDOB = format(DOB);
+
+        System.out.println("Enter Email: ");
+        String userEmail = scanner.nextLine();
+
+        System.out.println("Enter Phone Number: ");
+        int userPhone = scanner.nextInt();
+
+
+        System.out.println("Enter Address: ");
+        String userAddress = scanner.nextLine();
+
+        System.out.println("Enter Customer Status (e.g., 'A' or 'B'): ");
+        char customerStatus = scanner.next().charAt(0);
+
+        System.out.println("Enter Salary: ");
+        int salary = scanner.nextInt();
+
+        System.out.println("Enter Revenue: ");
+        int revenue = scanner.nextInt();
+
+        Saleperson newSaleperson = new Saleperson(userID, username,
+                userPassword, name, userDOB, userEmail, userPhone, userAddress, customerStatus, salary, revenue);
+
+        saveSalepersonToFile(newSaleperson);
+
+        System.out.println("client registered successfully!");
+    }
     private static void saveMechanicToFile(Mechanic mechanic) {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter("mechanic.txt", true))) {
             writer.write(mechanic.getUserID() + "," +
@@ -281,7 +331,24 @@ public class Register {
 
     // Function to save Manager details to file
     public static void saveManagerToFile(Manager manager) {
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter("DealingCar/manager.txt", true))) {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter("manager.txt", true))) {
+            // Writing data separated by commas
+            writer.write(manager.getUserID() + "," +
+                    manager.getUsername() + "," +
+                    manager.getUserPassword() + "," +
+                    manager.getName() + "," +
+                    manager.getUserDOB() + "," +
+                    manager.getUserEmail() + "," +
+                    manager.getUserPhone() + "," +
+                    manager.getUserAddress() + "," +
+                    manager.getCustomerStatus() + "\n");
+        } catch (IOException e) {
+            System.out.println("An error occurred while writing to file.");
+            e.printStackTrace();
+        }
+    }
+    public static void saveclientToFile(Manager manager) {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter("client.txt", true))) {
             // Writing data separated by commas
             writer.write(manager.getUserID() + "," +
                     manager.getUsername() + "," +

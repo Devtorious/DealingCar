@@ -48,7 +48,7 @@ public class Saleperson extends Employee {
                 id,
                 transactionDate,
                 clientId,
-                this.getUserID(), // Sử dụng UserID
+                this.getUserID(),
                 serviceType,
                 purchasedItems,
                 discount,
