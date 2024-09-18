@@ -281,7 +281,7 @@ public class Register {
 
     // Function to save Manager details to file
     public static void saveManagerToFile(Manager manager) {
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter("manager.txt", true))) {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter("DealingCar/manager.txt", true))) {
             // Writing data separated by commas
             writer.write(manager.getUserID() + "," +
                     manager.getUsername() + "," +

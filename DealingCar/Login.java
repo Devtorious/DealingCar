@@ -11,15 +11,18 @@ public class Login {
         boolean loggedIn = false;
 
         while (!loggedIn) {
+
+
             System.out.print("Enter username: ");
-            String username = scanner.nextLine();
+            String username = scanner.nextLine().trim();
 
             System.out.print("Enter password: ");
-            String password = scanner.nextLine();
+            String password = scanner.nextLine().trim();
 
             if (authenticateUser(username, password,filepath)) {
                 System.out.println("Login successful!");
-                loggedIn = true;
+                return true;
+
             } else {
                 System.out.println("Invalid username or password. Please try again.");
             }
