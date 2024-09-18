@@ -15,7 +15,7 @@ import java.util.Set;
 public class Register {
 
     // Function to format Date from String
-    public static Date formater(String dob) {
+    public static Date format(String dob) {
         SimpleDateFormat formator = new SimpleDateFormat("dd/MM/yyyy");
         try {
             return formator.parse(dob);
@@ -73,7 +73,7 @@ public class Register {
 
         // Generate new ID
         maxID++;
-        return String.format("%s%04d", maxID, word);
+        return String.format("%s%04d", word, maxID);
     }
 
     // Function to register a new Manager
@@ -102,7 +102,8 @@ public class Register {
         String name = scanner.nextLine();
 
         System.out.println("Enter Date of Birth (dd/MM/yyyy): ");
-        Date userDOB = formater(scanner.nextLine());
+        String DOB = scanner.nextLine();
+        Date userDOB = format(DOB);
 
 
         System.out.println("Enter Email: ");
@@ -152,7 +153,8 @@ public class Register {
         String name = scanner.nextLine();
 
         System.out.println("Enter Date of Birth (dd/MM/yyyy): ");
-        Date userDOB = formater(scanner.nextLine());
+        String DOB = scanner.nextLine();
+        Date userDOB = format(DOB);
 
         System.out.println("Enter Email: ");
         String userEmail = scanner.nextLine();
@@ -206,7 +208,8 @@ public class Register {
         String name = scanner.nextLine();
 
         System.out.println("Enter Date of Birth (dd/MM/yyyy): ");
-        Date userDOB = formater(scanner.nextLine());
+        String DOB = scanner.nextLine();
+        Date userDOB = format(DOB);
 
         System.out.println("Enter Email: ");
         String userEmail = scanner.nextLine();
