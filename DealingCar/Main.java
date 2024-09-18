@@ -18,8 +18,8 @@ public class Main {
         System.out.println("| Instructor: Mr. Minh Vu & Mr. Dung Nguyen   |");
         System.out.println("| Group: Group Name                           |");
         System.out.println("| s3979209, Nguyen Huynh Gia Khang            |");
-        System.out.println("| sXXXXXXX, Student Name                      |");
-        System.out.println("| sXXXXXXX, Student Name                      |");
+        System.out.println("| s3979760, Pham Hieu Dat                     |");
+        System.out.println("| s3836276, Tran Quang Anh                    |");
         System.out.println(" _____________________________________________");
 
         Scanner scanner = new Scanner(System.in);
