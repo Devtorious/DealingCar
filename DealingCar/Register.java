@@ -81,7 +81,7 @@ public class Register {
         Scanner scanner = new Scanner(System.in);
 
         // Generate a unique Manager ID
-        String userID = generateUniqueID("DealingCar/manager.txt","M");
+        String userID = generateUniqueID("manager.txt","M");
 
         System.out.println("Generated Manager ID: " + userID);
 
@@ -90,7 +90,7 @@ public class Register {
         String username = scanner.nextLine();
 
         // Check if the username already exists
-        if (isUsernameTaken("DealingCar/manager.txt",username)) {
+        if (isUsernameTaken("manager.txt",username)) {
             System.out.println("Username already exists! Please choose a different one.");
             return;
         }
@@ -135,13 +135,13 @@ public class Register {
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("Enter Salesperson ID: ");
-        String userID = generateUniqueID("saleperson.txt","S");
+        String userID = generateUniqueID("DealingCar/saleperson.txt.txt","S");
 
         System.out.println("Enter Username: ");
         String username = scanner.nextLine();
         // Check if the username already exists
 
-        if (isUsernameTaken("saleperson.txt",username)) {
+        if (isUsernameTaken("DealingCar/saleperson.txt.txt",username)) {
             System.out.println("Username already exists! Please choose a different one.");
             return;
         }
@@ -311,7 +311,7 @@ public class Register {
 
 
     private static void saveSalepersonToFile(Saleperson saleperson) {
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter("saleperson.txt", true))) {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter("DealingCar/saleperson.txt", true))) {
             writer.write(saleperson.getUserID() + "," +
                     saleperson.getUsername() + "," +
                     saleperson.getUserPassword() + "," +
