@@ -34,7 +34,7 @@ public class Main {
 //         Vòng lặp while để người dùng có thể quay lại menu chính
         while (n != 0) {
             System.out.println("--------------------------------------");
-            System.out.println("1: Admin");
+            System.out.println("1: Manager");
             System.out.println("2: Sale");
             System.out.println("3: Customer");
             System.out.println("0: exit");
