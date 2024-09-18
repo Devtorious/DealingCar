@@ -48,6 +48,7 @@ public class Main {
                         System.out.println("2. Register");
                         System.out.println("Choose an option: ");
                         int login = scan.nextInt();
+                        scan.nextLine();
                         switch (login) {
                             case 1:
                                 Login.main("DealingCar/manager.txt");
@@ -57,6 +58,7 @@ public class Main {
                                 Register.registerManager();
                         }
                     }
+                    break;
 
                 case 2:
                     Login.main("DealingCar/saleperson.txt");
