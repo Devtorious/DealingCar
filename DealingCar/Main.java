@@ -82,11 +82,11 @@ public class Main {
                                 break;
                             case 2:
                                 System.out.println(" day revenue");
-                                System.out.println("Kết quả là: ");
+
                                 break;
                             case 3:
                                 System.out.println(" view employee list ");
-                                System.out.println("Kết quả là: ");
+
                                 break;
                             case 4:
                             // display all cars
@@ -155,17 +155,18 @@ public class Main {
                 case 3:
                     int customer = -1;
                     while (customer != 0) {
-                        System.out.println("1: Xem danh sách đã mua");
-                        System.out.println("2: Xem danh sách xe");
+                        System.out.println("1: purchased car");
+                        System.out.println("2: car list ");
                         System.out.println("0: return");
                         customer = scan.nextInt();
 
                         switch (customer) {
                             case 1:
-                                System.out.println("Đang xem danh sách đã mua...");
+                                System.out.println("car have purchased ");
                                 break;
                             case 2:
-                                System.out.println("Đang xem danh sách xe...");
+                                System.out.println("car list");
+                                inventory.displayCars();
                                 break;
                             case 0:
                                 System.out.println("return...");
